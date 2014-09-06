@@ -1,0 +1,141 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+}
+
+/* Navigation Bar */
+
+nav {
+  position:fixed;
+  width: 52px;
+  height: 100%;
+  background: #EAEAEA;
+}
+
+.nav-hidden {
+  position: absolute;
+  display: none;
+  width: 270px;
+  height: 100%;
+  background: #EAEAEA;
+}
+
+nav:hover .nav-hidden {
+  display: block;
+}
+
+.nav-hidden-top {
+  display: block;
+  font-family: sans-serif;
+}
+
+.nav-logged-out-title {
+  display: block;
+  padding: 40px 80px 30px 40px;
+  width: 155px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+  color: #5C5C5C;
+}
+
+.nav-logged-out-description {
+	display: block;
+	padding: 35px 50px 36px 40px;
+	font-size: 14px;
+	font-weight: normal;
+	color: #5C5C5C;
+}
+
+.nav-add-content {
+	display: block;
+  margin: auto;
+  padding: 10px 90px 15px 10px;
+  width: 90px;
+  height: 10px;
+	text-decoration: none;
+	color: white;
+	background: #27A63B;
+  border-radius: 5px;
+}
+
+.nav-log-in {
+	display: block;
+  margin: 80px auto 15px auto;
+  padding: 10px 90px 15px 10px;
+  width: 85px;
+  height: 10px;
+	text-decoration: none;
+	color: white;
+	background: #5C5C5C;
+  border-radius: 5px;
+}
+
+.nav-sign-up {
+	display: block;
+  margin: 15px auto 0 auto;
+  padding: 10px 90px 15px 10px;
+  width: 85px;
+  height: 10px;
+	text-decoration: none;
+	color: white;
+	background: #5C5C5C;
+  border-radius: 5px;
+}
+
+/* Pages */
+
+.page {
+  display: block;
+  height: 100%;
+  padding-left: 110px;
+  padding-right: 62px;
+  background: red;
+}
+
+/* Root Page */
+
+.feeder-description-one {
+	display: block;
+  font-family: sans-serif;
+  background: green;
+}
+
+.feeder-description-one > div {
+  display: block;
+  margin: auto;
+  padding-top: 150px;
+  width: 375px;
+  background: blue;
+}
+
+.feeder-description-one > div > h1 {
+  margin-bottom: 12px;
+  font-weight: 700;
+  font-size: 28px;
+	text-align: center;
+	letter-spacing: -0.04em;
+	color: #242424;
+}
+
+.feeder-description-one > div > p {
+	font-weight: 300;
+	text-align: center;
+	color: #676767;
+}

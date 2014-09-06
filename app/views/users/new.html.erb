@@ -1,0 +1,21 @@
+<h1>Sign Up</h1>
+
+<%= render "shared/errors" %>
+
+<form action="<%= users_url %>" method="post">
+  <%= render "shared/authentication" %>
+
+  <label>
+    Username
+    <input type="text" name="user[username]" value="<%= @user.username %>">
+  </label>
+  <br>
+
+  <label>
+    Password
+    <input type="password" name="user[password]">
+  </label>
+  <br>
+
+  <input type="submit">
+</form>
