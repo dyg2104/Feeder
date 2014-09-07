@@ -13,9 +13,12 @@
 //= require jquery
 //= require jquery_ujs
 //= require underscore
+//= require jquery.serializejson.js
 //= require backbone
+//= require backbone.subset
 //= require feeder
 //= require_tree ../templates
+//= require_tree ./subsets
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views

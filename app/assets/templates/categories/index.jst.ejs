@@ -1,0 +1,18 @@
+<article class="category-index-search">
+	  <p>Pick a topic you are passionate about: </p>
+    <form class="category-index-search-form">
+      <input type="text" name="query" placeholder="search by title or url">
+      <!-- <input type="submit"> -->
+    </form>
+</article>
+
+<article class="category-index-content">
+<% _.each(categories, function(category) { %>
+  <div class="category-index-category">
+		<a href="#categories/<%= category.get("id") %>">
+		<img src="https://s3.feedly.com/explore/tech.jpg">
+    <h4><%= category.get("title") %></h4>
+    </a>
+  </div>
+<% }); %>
+</article>

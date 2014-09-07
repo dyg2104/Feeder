@@ -1,0 +1,1 @@
+Feeder.Subsets.CommentsSub = Backbone.Subset.extend({});

@@ -1,0 +1,1 @@
+Feeder.Subsets.FeedsSub = Backbone.Subset.extend({});
