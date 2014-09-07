@@ -122,9 +122,37 @@ nav:hover .nav-hidden {
 .page {
   display: block;
   height: 100%;
-  padding-left: 110px;
-  padding-right: 62px;
+  padding-left: 190px;
+  padding-right: 132px;
 /*  background: red;*/
+}
+
+/* Pages Header */
+
+.page-header {
+	display: block;
+	margin-bottom: 125px;
+	padding-top: 25px;
+	font-family: sans-serif;
+/*	background: blue;*/
+}
+
+.page-header-title {
+	float: left;
+}
+
+.page-header-title > h1 {
+	font-size: 30px;
+}
+
+.page-header-toolbar {
+	float: right;
+	padding-top: 10px;
+}
+
+.general-search-form input[type="text"] {
+	text-align: center;
+	border: 2px solid #E4E4E4;
 }
 
 /* Root Page */
@@ -372,13 +400,51 @@ nav:hover .nav-hidden {
 }
 
 .category-index-category img {
-	width: 115px;
+	width: 110px;
 	height: 80px;
 }
 
 .category-index-category h4 {
 	display: block;
+	padding: 5px;
+	font-size: 14px;
 	text-align: center;
 	color: black;
-	padding: 5px;
+}
+
+/* Category Show Page */
+
+.category-show-content {
+	display: block;
+	font-family: sans-serif;	
+	clear: both;
+/*	background: orange;*/
+}
+
+.category-show-content > h6 {
+	color: #E4E4E4;
+}
+
+.category-show-feed {
+	display: inline-block;
+	margin: 0 3px 75px 3px;
+	padding: 2px;
+	border: 2px solid #E4E4E4;
+/*	background: green;*/
+}
+
+.category-show-feed > a {
+	text-decoration: none;
+}
+
+.category-show-feed > a > h4 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: black;
+	text-align: center;
+}
+
+.category-show-feed > a > img {
+	display: block;
+	width: 250px;
 }

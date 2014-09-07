@@ -1,0 +1,28 @@
+<header class="page-header">
+	<div class="page-header-title">
+		<h1>Explore #<%= category.get("title") %></h1>
+  </div>
+
+	<div class="page-header-toolbar">
+		<form class="general-search-form">
+			<input type="text" name="query" placeholder="Search Feeds">
+			<!-- <input type="submit"> -->
+		</form>
+	</div>
+</header>
+
+<article class="category-show-content">
+  <h6>Feeds</h6>
+	<br>
+	<br>
+	<br>
+
+  <% feeds.each(function(feed) { %>
+    <div class="category-show-feed">
+      <a href="#feeds/<%= feed.get("id") %>">
+        <h4><%= feed.get("title") %></h4>
+        <img src ="http://cdn0.vox-cdn.com/uploads/chorus_image/image/37749232/nytimes-dota-the-international1_2040.0.0_standard_800.0.jpg">
+      </a>
+    </div>
+  <% }); %>
+</article>

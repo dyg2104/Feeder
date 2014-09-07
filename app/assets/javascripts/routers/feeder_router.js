@@ -1,8 +1,8 @@
 Feeder.Routers.FeederRouter = Backbone.Router.extend({
 	routes: {
 		"" : "homePage",
-    "categories" : "categoriesPage"
-    // "categories/:id" : "categoryPage",
+    "categories" : "categoriesPage",
+    "categories/:id" : "categoryPage"
     // "feeds/:id" : "feedPage",
 		// "savedArticles" : "showSaved",
     // "user/categories/:id" : "categoryFilter",
@@ -25,12 +25,18 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
 	},
 	
   categoriesPage: function() {
-		console.log("HERE");
     var categoriesView = new Feeder.Views.CategoryIndex({
       collection: Feeder.all_categories
     });
-		console.log(categoriesView);
     this._swapView(categoriesView);
+  },
+	
+  categoryPage: function(id) {
+    var category = Feeder.all_categories.getOrFetch(id);
+    var categoryView = new Feeder.Views.CategoryCategoryShow({
+      model: category
+    });
+    this._swapView(categoryView);
   },
 	//
 	//   categoryFilter: function(id) {
@@ -69,13 +75,6 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
 	//   },
 	//
 	//
-	//   categoryPage: function(id) {
-	//     var category = window.categories.getOrFetch(id);
-	//     var categoryView = new Feeder.Views.CategoryCategoryShow({
-	//       model: category
-	//     });
-	//     this._swapView(categoryView);
-	//   },
 	//
 	//   feedPage: function(id) {
 	//     var feed = window.feeds.getOrFetch(id);

@@ -24,7 +24,7 @@ window.Feeder = {
       parentCollection: Feeder.all_articles
     });
 		
-		new Feeder.Routers.FeederRouter();
+		Feeder.router = new Feeder.Routers.FeederRouter();
  		Backbone.history.start();
 
     // Feeder.user = new Feeder.Models.User({ id: 1 });
