@@ -106,7 +106,7 @@ nav:hover .nav-hidden {
   height: 100%;
   padding-left: 110px;
   padding-right: 62px;
-  background: red;
+/*  background: red;*/
 }
 
 /* Root Page */
@@ -114,7 +114,7 @@ nav:hover .nav-hidden {
 .feeder-description-one {
 	display: block;
   font-family: sans-serif;
-  background: green;
+/*  background: green;*/
 }
 
 .feeder-description-one > div {
@@ -122,7 +122,7 @@ nav:hover .nav-hidden {
   margin: auto;
   padding-top: 150px;
   width: 375px;
-  background: blue;
+/*  background: blue;*/
 }
 
 .feeder-description-one > div > h1 {
@@ -135,7 +135,114 @@ nav:hover .nav-hidden {
 }
 
 .feeder-description-one > div > p {
+  margin-bottom: 75px;
 	font-weight: 300;
 	text-align: center;
 	color: #676767;
 }
+
+.feeder-description-one a {
+  display: block;
+  margin: auto;
+  padding: 12px 0 12px 0;
+  width: 200px;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFFEFE;
+  background: #27A63B;
+}
+
+.feeder-description-two {
+	display: block;
+  margin-top: 175px;
+  padding: 0 80px 0 80px;
+/*  background: blue;*/
+  height: 100%;
+}
+
+.feeder-description-two-content {
+  display: block;
+  margin: auto;
+  padding: 0;
+/*  background: green;*/
+  width: 724px;
+}
+
+.feeder-description-two-content > div {
+  display: inline-block;
+  margin: auto;
+  padding: 0 16px 0 16px;
+  font-family: sans-serif;
+  border: 2px dashed white;
+/*  background: yellow;*/
+}
+
+.feeder-description-two-content div h5 {
+  margin: 0 0 6px 0;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: -0.04em;
+  text-align: center;
+  color: #262626;
+}
+
+.feeder-description-two div p {
+	font-size: 14px;
+	text-align: center;
+	color: #848484;
+}
+
+/* Sign Up */
+.sign-up {
+  display: block;
+  margin: auto;
+  padding-top: 150px;
+  width: 400px;
+  font-family: sans-serif;
+/*  background: blue;*/
+}
+
+.sign-up > h1 {
+  display: block;
+  margin: auto;
+  font-size: 40px;
+  text-align: center;
+/*  background: yellow;*/
+}
+
+.sign-up-form {
+  margin-top: 40px;
+/*  background: green;*/
+}
+
+.sign-up-form > label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.sign-up-form > input {
+  display: block;
+  margin: auto;
+  width: 275px;
+  height: 35px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.sign-up-form > input[type="submit"] {
+  display: block;
+  width: 125px;
+  margin-top: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  background: #27A63B;
+}
+
+
+
+/* Log In */
