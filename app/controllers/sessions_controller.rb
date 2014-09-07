@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
       render :new
     else
       login!(user)
-      # update_feeds!(user)
+      update_feeds!(user)
       redirect_to root_url
     end
   end

@@ -19,7 +19,7 @@ development:
   encoding: unicode
   database: Feeder_development
   pool: 5
-  username: appacademy
+  username: rocketman04
   password:
   host: localhost
 
@@ -49,6 +49,6 @@ test:
   encoding: unicode
   database: Feeder_test
   pool: 5
-  username: appacademy
+  username: rocketman04
   password:
   host: localhost

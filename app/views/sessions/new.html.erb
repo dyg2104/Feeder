@@ -1,21 +1,21 @@
-<h1>Log In</h1>
+<div class="log-in">
+	<h1>Log In</h1>
+	
+	<div class="shared-errors">
+	  <%= render "shared/errors" %>
+  </div>
 
-<%= render "shared/errors" %>
+	<form class="log-in-form" action="<%= session_url %>" method="post">
+	  <%= render "shared/authentication" %>
 
-<form action="<%= session_url %>" method="post">
-  <%= render "shared/authentication" %>
+	  <label for id="username">Username</label>
+	    <input id="username" type="text" name="user[username]">
+	  <br>
 
-  <label>
-    Username
-    <input type="text" name="user[username]">
-  </label>
-  <br>
+	  <label for id="password">Password</label>
+	    <input id="password" type="password" name="user[password]">
+	  <br>
 
-  <label>
-    Password
-    <input type="password" name="user[password]">
-  </label>
-  <br>
-
-  <input type="submit">
-</form>
+	  <input type="submit" value="Submit">
+	</form>
+</div>

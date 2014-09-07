@@ -1,8 +1,10 @@
 <div class="sign-up">
   <h1>Sign Up</h1>
-
-  <%= render "shared/errors" %>
-
+	
+	<div class="shared-errors">
+    <%= render "shared/errors" %>
+	</div>
+	
   <form class="sign-up-form" action="<%= users_url %>" method="post">
     <%= render "shared/authentication" %>
 
@@ -11,9 +13,9 @@
     <br>
 
     <label for id="password">Password</label>
-      <input type="password" name="user[password]">
+      <input id="password" type="password" name="user[password]">
     <br>
 
-    <input type="submit">
+    <input type="submit" value="Submit">
   </form>
 </div>

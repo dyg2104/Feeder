@@ -99,6 +99,24 @@ nav:hover .nav-hidden {
   border-radius: 5px;
 }
 
+.nav-hidden-bottom {
+  display: block;
+  position: absolute;
+	width: 100%;
+  height: 50px;
+	bottom: 0;
+  border-radius: 5px;
+  font-family: sans-serif;
+}
+
+.nav-hidden-bottom input[type="submit"] {
+	width: 100%;
+	height: 50px;
+	cursor: pointer;
+	color: #EAEAEA;
+	background: #7D7B7B;
+}
+
 /* Pages */
 
 .page {
@@ -120,7 +138,7 @@ nav:hover .nav-hidden {
 .feeder-description-one > div {
   display: block;
   margin: auto;
-  padding-top: 150px;
+  padding-top: 105px;
   width: 375px;
 /*  background: blue;*/
 }
@@ -194,6 +212,7 @@ nav:hover .nav-hidden {
 }
 
 /* Sign Up */
+
 .sign-up {
   display: block;
   margin: auto;
@@ -239,10 +258,68 @@ nav:hover .nav-hidden {
   font-size: 16px;
   border: none;
   border-radius: 5px;
+	cursor: pointer;
   color: white;
   background: #27A63B;
 }
 
-
-
 /* Log In */
+
+.log-in {
+  display: block;
+  margin: auto;
+  padding-top: 150px;
+  width: 400px;
+  font-family: sans-serif;
+/*  background: blue;*/
+}
+
+.log-in > h1 {
+  display: block;
+  margin: auto;
+  font-size: 40px;
+  text-align: center;
+/*  background: yellow;*/
+}
+
+.log-in-form {
+  margin-top: 40px;
+/*  background: green;*/
+}
+
+.log-in-form > label {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.log-in-form > input {
+  display: block;
+  margin: auto;
+  width: 275px;
+  height: 35px;
+  text-align: center;
+  border: 2px solid black;
+}
+
+.log-in-form > input[type="submit"] {
+  display: block;
+  width: 125px;
+  margin-top: 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+	cursor: pointer;
+  color: white;
+  background: #27A63B;
+}
+
+/* Sign Up and Log In Errors */
+
+.shared-errors {
+	display: block;
+	margin: 20px auto 0 auto;
+	width: 300px;
+/*	background: green;*/
+}
