@@ -36,12 +36,12 @@ Feeder.Views.ArticleModal = Backbone.View.extend({
 		return this;
 	},	
 
-  // events: {
-  //   'click .article-modal-toolbar > button' : 'saveArticle',
-  //   'submit form.modal-comment-form': 'createComment',
-  //   'click .article-modal-header > button' : 'removeModal',
-  //   'click div.article-modal-background' : 'removeModal'
-  // },
+  events: {    //
+    // 'click .article-modal-toolbar > button' : 'saveArticle',
+    // 'submit form.modal-comment-form': 'createComment',
+    'click .article-modal-header > button' : 'removeModal',
+    'click div.article-modal-background' : 'removeModal'
+  },
 
 	unescapeHtml: function(safe) {
 	    return safe.replace(/&amp;/g, '&')
@@ -49,7 +49,7 @@ Feeder.Views.ArticleModal = Backbone.View.extend({
 	        .replace(/&gt;/g, '>')
 	        .replace(/&quot;/g, '"')
 	        .replace(/&#039;/g, "'");
-	}
+	},
 	//
 	//   saveArticle: function() {
 	//     var that = this;
@@ -83,32 +83,32 @@ Feeder.Views.ArticleModal = Backbone.View.extend({
 	//     });
 	//   },
 	//
-	//   removeModal: function(event) {
-	//     $(document).find("div.article-modal-content").toggleClass("article-modal-content-on");
-	//     $(document).find("div.article-modal-background").toggleClass("article-modal-background-on");
-	//     $(document).find("div.article-modal").toggleClass("article-modal-on");
-	//
-	//     if (window.current_user) {
-	//       var that = this;
-	//       $.ajax({
-	//         url: ("/api/articles/" + that.model.id),
-	//         type: "PATCH",
-	//         success: function(response) {
-	//           hash = window.location.hash;
-	//
-	//           if(window.location.pathname === "/" &&
-	//              hash === "" && response.success) {
-	//                that.articleView.remove();
-	//           } else if(hash.substring(0, 17) === "#user/categories/") {
-	//             that.articleView.remove();
-	//           } else if(hash.substring(0, 12) === "#user/feeds/") {
-	//             that.articleView.remove();
-	//           }
-	//         }
-	//       });
-	//     }
-	//
-	//     this.remove();
-	//   }
+  removeModal: function(event) {
+    $(document).find("div.article-modal-content").toggleClass("article-modal-content-on");
+    $(document).find("div.article-modal-background").toggleClass("article-modal-background-on");
+    $(document).find("div.article-modal").toggleClass("article-modal-on");
+
+    // if (window.current_user) {
+//       var that = this;
+//       $.ajax({
+//         url: ("/api/articles/" + that.model.id),
+//         type: "PATCH",
+//         success: function(response) {
+//           hash = window.location.hash;
+//
+//           if(window.location.pathname === "/" &&
+//              hash === "" && response.success) {
+//                that.articleView.remove();
+//           } else if(hash.substring(0, 17) === "#user/categories/") {
+//             that.articleView.remove();
+//           } else if(hash.substring(0, 12) === "#user/feeds/") {
+//             that.articleView.remove();
+//           }
+//         }
+//       });
+//     }
+
+    this.remove();
+  }
 
 });

@@ -4,7 +4,9 @@
 <div class="article-modal-content">
 
   <header class="article-modal-header">
-    <button id="article-modal-close">Close</button>
+	  <div id="article-modal-close">
+      <button>Close</button>
+		</div>
 		
     <a class="article-modal-title" href="<%= article.get("guid") %>">
       <h4><%= article.get("title") %></h4>
@@ -58,22 +60,19 @@
     <br>
 
     <% if (Feeder.user_status) { %>
-	  <div class="modal-comment-form-container">
-	    <h4>New Comment</h4>
+    <h4>New Comment</h4>
 
-	    <br>
-	    <form class="modal-comment-form">
-	      <input type="submit">
-	      <input type="hidden"
-	             name="comment[article_id]"
-	             value="<%= this.model.escape("id") %>">
+    <!-- <br> -->
+    <form class="modal-comment-form">
+      <input type="submit">
+      <input type="hidden"
+             name="comment[article_id]"
+             value="<%= this.model.escape("id") %>">
 
-	      <textarea name="comment[body]"></textarea>
+      <textarea name="comment[body]"></textarea>
 
 
-	    </form>
-	  </div>
-
+    </form>
     <% } %>
 
   </section>
