@@ -13,7 +13,7 @@ Category.create({ title: "Do It Yourself", image_url: "http://s3.feedly.com/expl
 Category.create({ title: "News", image_url: "http://s3.feedly.com/explore/world-news.jpg"})
 Category.create({ title: "Finance", image_url: "https://s3.feedly.com/explore/finance.jpg"})
 Category.create({ title: "Film", image_url: "http://s3.feedly.com/explore/cinema.jpg"})
-Category.create({ title: "Youtube", image_url: "http://s3.feedly.com/explore/youtube.jpg"})
+Category.create({ title: "YouTube", image_url: "http://s3.feedly.com/explore/youtube.jpg"})
 
 Feed.create_feed("The Verge", "http://www.theverge.com/rss/index.xml", 1,
     "http://cdn0.sbnation.com/imported_assets/845800/verge_badge_color.png")
@@ -208,5 +208,5 @@ Feed.create_feed("Moviefone News", "http://news.moviefone.com/rss.xml", 15,
 Feed.create_feed("ScreenCrave.com", "http://screencrave.com/feed/", 15,
     "http://ak.scr.imgfarm.com/holi/md/VdayMovies.jpg")
 
-Feed.create_feed("Youtube - Most Popular", "https://gdata.youtube.com/feeds/api/standardfeeds/most_popular", 16,
+Feed.create_feed("YouTube - Most Popular", "https://gdata.youtube.com/feeds/api/standardfeeds/most_popular", 16,
     "http://buy-pva.com/wp-content/uploads/2013/03/Youtube_logo-tn1.png")
