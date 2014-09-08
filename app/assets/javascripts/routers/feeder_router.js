@@ -4,9 +4,9 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
     "categories" : "categoriesPage",
     "categories/:id" : "categoryPage",
     "feeds/:id" : "feedPage",
-		// "savedArticles" : "showSaved",
+		"savedArticles" : "showSaved",
     "user/categories/:id" : "categoryFilter",
-    // "user/feeds/:id" : "feedFilter",
+    "user/feeds/:id" : "feedFilter",
     "searchResults/:query" : "search"
 	},
 
@@ -54,54 +54,33 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
     });
     this._swapView(filteredView);
   },
-	//
-	//   feedFilter: function(id) {
-	//     var that = this;
-	//
-	//     Feeder.current_user.categories().each(function(category) {
-	//       category.feeds().each(function(feed) {
-	//         if (feed.id === parseInt(id)) {
-	//           var filteredView = new Feeder.Views.FeedNavFilter({
-	//             model: feed
-	//           });
-	//           that._swapView(filteredView);
-	//         }
-	//       });
-	//     });
-	//   },
-	//
-	//   showSaved: function() {
-	// 	var that = this;
-	// 	$.ajax({
-	// 		url: "/api/showSaved",
-	// 		success: function(response) {
-	//         var articles = new Feeder.Collections.Articles(response);
-	//   			var savedView = new Feeder.Views.ArticleSavedShow({ collection: articles });
-	// 			that._swapView(savedView);
-	// 		}
-	// 	});
-	//   },
-	//
-	//
-	//
+
+  feedFilter: function(id) {
+		Feeder.user.setAttrs(Feeder.user_categories,
+                         Feeder.user_feeds,
+                         Feeder.user_articles);
+												 console.log(id);
+		
+		feed = Feeder.user_feeds.get(id);
+    var filteredView = new Feeder.Views.FeedNavFilter({
+      model: feed
+    });
+		
+    this._swapView(filteredView);
+  },
+
+  showSaved: function() {
+		var that = this;
+		$.ajax({
+			url: "/api/showSaved",
+			success: function(response) {
+	        var articles = new Feeder.Collections.Articles(response);
+	  			var savedView = new Feeder.Views.ArticleSaved({ collection: articles });
+				that._swapView(savedView);
+			}
+		});
+  },
 	
-	//
-	//   userPage: function(id) {
-	// 	var that = this;
-	// 	$.ajax({
-	// 		url: "/api/current_user_id",
-	// 		success: function(response) {
-	//         if (response.success && (id === response.id.toString())) {
-	//           that.navigate("", true);
-	// 			} else {
-	// 				var user = window.users.getOrFetch(id);
-	// 				var userView = new Feeder.Views.UserShow({ model: user });
-	// 				that._swapView(userView);
-	// 			}
-	// 		}
-	// 	});
-	//   },
-	//
   search: function(query) {
     var that = this;
 		
