@@ -10,7 +10,7 @@ Feeder.Views.CategoryIndex = Backbone.View.extend({
   },
 
   events: {
-    'submit .categories-search-form' : 'search'
+    'submit .category-index-search-form' : 'search'
   },
 
   render: function() {

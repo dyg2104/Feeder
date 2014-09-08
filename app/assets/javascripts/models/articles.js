@@ -1,22 +1,17 @@
-Feeder.Collections.Articles = Backbone.Collection.extend({
-	model: Feeder.Models.Article,
-
-	getOrFetch: function(id) {
-		var articles = this;
-		var article;
-
-		if(article = articles.get(id)) {
-			article.fetch();
-		} else {
-			article = new Feeder.Models.Article({ id: id });
-			article.fetch({
-				success: function() {
-					articles.add(article);
-				}
-			});
-		}
-
-		return article;
+Feeder.Models.Article = Backbone.Model.extend({
+	comments: function() {
+		this._comments = this._comments || new Feeder.Subsets.CommentsSub([], {
+			parentCollection: Feeder.all_comments
+		});
+		return this._comments;
 	},
 
+	parse: function(response) {
+		if(response.comments) {
+			this.comments().set(response.comments, { parse: true });
+			delete response.articles;
+		}
+
+		return response;
+	}
 });

@@ -2,7 +2,7 @@ Feeder.Models.Feed = Backbone.Model.extend({
 	urlRoot: "/api/feeds",
 	
 	articles: function() {
-		this._articles = this._articles || new Feeder.Subset.ArticlesSub([], {
+		this._articles = this._articles || new Feeder.Subsets.ArticlesSub([], {
 			parentCollection: Feeder.all_articles
 		});
 		return this._articles;

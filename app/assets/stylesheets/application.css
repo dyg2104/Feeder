@@ -448,3 +448,47 @@ nav:hover .nav-hidden {
 	display: block;
 	width: 250px;
 }
+
+/* Search Results Page */
+
+.search-results-content {
+	display: block;
+	font-family: sans-serif;	
+	clear: both;
+/*	background: orange;*/
+}
+
+.search-results-content > h6 {
+	color: #E4E4E4;
+}
+
+.search-results-none {
+}
+
+.search-results-feed {
+	display: inline-block;
+	margin: 0 3px 75px 3px;
+	padding: 2px;
+	border: 2px solid #E4E4E4;
+/*	background: green;*/
+}
+
+.search-results-feed > a {
+	text-decoration: none;
+}
+
+.search-results-feed > a > h4 {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	color: black;
+	text-align: center;
+}
+
+.search-results-feed > a > img {
+	display: block;
+	width: 250px;
+}
+
+/* Feed Show Page */
+
+/* Article Show Page */

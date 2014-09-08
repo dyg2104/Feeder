@@ -9,7 +9,7 @@ Feeder::Application.routes.draw do
   resources :comments, only: [:create]
   
   namespace :api, :defaults => { :format => :json } do
-    resources :users, :only => [:show]
+    get '/user', to: 'users#show'
     resources :categories, :only => [:index, :show]
     resources :feeds, :only => [:show]
     get '/showSaved', to: 'articles#showSaved'

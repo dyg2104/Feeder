@@ -1,0 +1,8 @@
+<a class="article-link" href="localhost:3000/#feeds/<%= article.get("feed_id") %>/articles/<%= article.id %>">
+  <h4><%= article.get("title") %></h4>
+	<h6><%= article.get("feed_title") %> / <%= article.get("published_at") %></h6>
+</a>
+
+<div>
+	<%= unescapeHtml(article.get("description")) %>
+</div>

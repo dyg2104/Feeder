@@ -6,7 +6,7 @@ window.Feeder = {
   Routers: {},
   initialize: function() {
     // alert('Hello from Backbone!');
-    Feeder.all_users = new Feeder.Collections.Users();
+    // Feeder.all_users = new Feeder.Collections.Users();
     Feeder.all_categories = new Feeder.Collections.Categories();
     Feeder.all_feeds = new Feeder.Collections.Feeds();
     Feeder.all_articles = new Feeder.Collections.Articles();
@@ -23,24 +23,27 @@ window.Feeder = {
     Feeder.user_articles = new Feeder.Subsets.ArticlesSub([], {
       parentCollection: Feeder.all_articles
     });
-		
-		Feeder.router = new Feeder.Routers.FeederRouter();
- 		Backbone.history.start();
 
-    // Feeder.user = new Feeder.Models.User({ id: 1 });
-//     Feeder.user.fetch({
-//       success: function(response) {
-//         Feeder.user_categories.set(response.get("categories"));
-//         Feeder.user_feeds.set(response.get("feeds"));
-//         Feeder.user_articles.set(response.get("articles"));
-//         Feeder.user.setAttrs(Feeder.user_categories,
-//                              Feeder.user_feeds,
-//                              Feeder.user_articles);
-//                          		new Feeder.Routers.FeederRouter();
-//                          		Backbone.history.start();
-//       }
-//     });
-		
+    Feeder.user = new Feeder.Models.User();
+    Feeder.user.fetch({
+      success: function(response) {
+				if (response.get("success") === false) {
+					Feeder.user_status = false;
+					Feeder.router = new Feeder.Routers.FeederRouter();
+			 		Backbone.history.start();
+				} else {
+					Feeder.user_status = true;
+	        Feeder.user_categories.set(response.get("categories"));
+	        Feeder.user_feeds.set(response.get("feeds"));
+	        Feeder.user_articles.set(response.get("articles"));
+	        Feeder.user.setAttrs(Feeder.user_categories,
+	                             Feeder.user_feeds,
+	                             Feeder.user_articles);
+	        new Feeder.Routers.FeederRouter();
+	        Backbone.history.start();
+				}
+			}  
+    });	
   }
 };
 

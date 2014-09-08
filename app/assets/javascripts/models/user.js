@@ -1,5 +1,5 @@
 Feeder.Models.User = Backbone.Model.extend({
-	urlRoot: "/api/users",
+	url: "/api/user",
 
   setAttrs: function(categories, feeds, articles) {
     articles.each(function(article) {

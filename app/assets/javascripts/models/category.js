@@ -10,7 +10,7 @@ Feeder.Models.Category = Backbone.Model.extend({
 
 	articles: function() {
 		this._articles = this._articles || new Feeder.Subsets.ArticlesSub([], {
-			parentCollection: Feeder.all_articlesss
+			parentCollection: Feeder.all_articles
 		});
 		return this._articles;
 	},

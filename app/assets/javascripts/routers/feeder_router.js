@@ -2,26 +2,20 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
 	routes: {
 		"" : "homePage",
     "categories" : "categoriesPage",
-    "categories/:id" : "categoryPage"
-    // "feeds/:id" : "feedPage",
+    "categories/:id" : "categoryPage",
+    "feeds/:id" : "feedPage",
 		// "savedArticles" : "showSaved",
     // "user/categories/:id" : "categoryFilter",
     // "user/feeds/:id" : "feedFilter",
-    // "searchResults/:query" : "search"
+    "searchResults/:query" : "search"
 	},
 
 	homePage: function() {
-		// var that = this;
-		// $.ajax({
-		// 	url: "/api/current_user_id",
-		// 	success: function(response) {
-		// 		if (response.success) {
-		// 			var userView = new Feeder.Views.UserShow({ model: Feeder.current_user });
-		// 			that._swapView(userView);
-		// 	          window.current_user = true;
-		// 		}
-		// 	}
-		// });
+    // Feeder.user.setAttrs(Feeder.user_categories,
+//                          Feeder.user_feeds,
+//                          Feeder.user_articles);
+		// var userView = new Feeder.Views.UserShow({ model: Feeder.user });
+// 		that._swapView(userView);
 	},
 	
   categoriesPage: function() {
@@ -38,6 +32,13 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
     });
     this._swapView(categoryView);
   },
+	
+  feedPage: function(id) {
+    var feed = Feeder.all_feeds.getOrFetch(id);
+    var feedView = new Feeder.Views.FeedShow({ model: feed });
+    this._swapView(feedView);
+  },
+	
 	//
 	//   categoryFilter: function(id) {
 	//     var category = Feeder.current_user.categories().get(id);
@@ -76,11 +77,7 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
 	//
 	//
 	//
-	//   feedPage: function(id) {
-	//     var feed = window.feeds.getOrFetch(id);
-	//     var feedView = new Feeder.Views.FeedFeedShow({ model: feed });
-	//     this._swapView(feedView);
-	//   },
+	
 	//
 	//   userPage: function(id) {
 	// 	var that = this;
@@ -98,27 +95,33 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
 	// 	});
 	//   },
 	//
-	//   search: function(query) {
-	//     var that = this;
-	//     $.ajax({
-	//       url: ("/api/search"),
-	//       type: "GET",
-	//       data: {
-	//         search: { query: query }
-	//       },
-	//       success: function(response) {
-	//         if (response.results === "none") {
-	//           var feeds = new Feeder.Collections.Feeds();
-	//           var resultsView = new Feeder.Views.Results({ collection: feeds });
-	//         } else {
-	//           var feeds = new Feeder.Collections.Feeds(response);
-	//           var resultsView = new Feeder.Views.Results({ collection: feeds });
-	//         }
-	//
-	//         that._swapView(resultsView);
-	//       }
-	//     });
-	//   },
+  search: function(query) {
+    var that = this;
+		
+    $.ajax({
+      url: "/api/search",
+      type: "GET",
+      data: {
+        search: { query: query }
+      },
+      success: function(response) {
+        if (response.success === false) {
+          var feeds = new Feeder.Subsets.FeedsSub([], {
+          	parentCollection: Feeder.all_feeds
+          });
+          var resultsView = new Feeder.Views.Results({ collection: feeds });
+        } else {
+          var feeds = new Feeder.Subsets.FeedsSub([], {
+          	parentCollection: Feeder.all_feeds
+          });
+					feeds.set(response);
+          var resultsView = new Feeder.Views.Results({ collection: feeds });
+        }
+
+        that._swapView(resultsView);
+      }
+    });
+  },
 
 	_swapView: function(newView) {
 		if(this.currentView) {
