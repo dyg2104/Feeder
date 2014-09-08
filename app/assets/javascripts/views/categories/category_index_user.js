@@ -4,6 +4,7 @@ Feeder.Views.CategoryIndexUser = Backbone.View.extend({
 	className: 'user-show-page-content',
 
 	initialize: function() {
+		this.listenTo(this.collection, 'add sync remove', this.render)
 		this.subViews = [];
 	},
 	

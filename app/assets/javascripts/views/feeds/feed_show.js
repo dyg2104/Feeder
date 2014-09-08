@@ -45,18 +45,32 @@ Feeder.Views.FeedShow = Backbone.View.extend({
       success: function(response) {
 				if (response.success) {
 	        
-					var category = Feeder.user_categories.get(that.model.get("category_id"));
+					var category = Feeder.user._categories.get(that.model.get("category_id"));
 					
 					if (!category) {
-						category = Feeder.all_categories.get(that.model.get("category_id"));
-						//remember to remove them too
-						category.feeds().set(that.model, { remove: false });
-						Feeder.user_categories.add(category);
-						Feeder.user_feeds.add(that.model);
-						console.log(Feeder.user);
+						var category_attributes = Feeder.all_categories.get(that.model.get("category_id")).attributes;
+						category = new Feeder.Models.Category(category_attributes);
+						category.feeds().add(that.model);
+						Feeder.user._categories.add(category);
+						// Feeder.user_feeds.add(that.model);
 					} else {
-						category.feeds().set(feed, { remove: false });
-						Feeder.user_feeds.add(that.model);
+						//remember to remove them too
+						console.log(category.feeds().models.indexOf(that.model));
+						if (!category.feeds().models.indexOf(that.model)) {
+							category.feeds().add(that.model);
+							// Feeder.user_feeds.add(that.model);
+						} else {
+							category.feeds().remove(that.model);
+							// Feeder.user_feeds.remove(that.model);
+							
+							var articles_to_remove = Feeder.user_articles.where({feed_id: that.model.id});
+							Feeder.user_articles.remove(articles_to_remove);
+							
+							if (category.feeds().length === 0) {
+								Feeder.user._categories.remove(category);
+								// Feeder.user_categories.remove(category);
+							}
+						}
 					}
 								
 					if ($(".feed-status-button").text() === "Follow") {

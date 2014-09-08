@@ -7,6 +7,7 @@ Feeder.Views.UserNav = Backbone.View.extend({
 
 	initialize: function() {
 	  this.listenTo(this.model, 'add sync remove', this.render);
+		this.listenTo(Feeder.user._categories, 'add sync remove', this.render);
 		this.subViews = [];
 	},
 	
@@ -14,7 +15,7 @@ Feeder.Views.UserNav = Backbone.View.extend({
     var content = this.template();
     this.$el.html(content);
 
-    var categories = Feeder.user_categories;
+    var categories = Feeder.user._categories;
     var that = this;
 
     categories.each(function(category) {
@@ -22,7 +23,7 @@ Feeder.Views.UserNav = Backbone.View.extend({
       that.subViews.push(subView);
       that.$(".nav-category-all").append(subView.render().$el);
     });
-
+		
     return this;
   }
 

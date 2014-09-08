@@ -3,6 +3,7 @@ Feeder.Views.UserShow = Backbone.View.extend({
 
 	initialize: function() {
 		this.listenTo(this.model, 'add sync remove', this.render);
+		this.listenTo(this.model._categories, 'add sync remove', this.render);
 		this.subViews = [];
 	},
 

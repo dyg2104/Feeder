@@ -14,9 +14,8 @@ window.Feeder = {
 		
 		Feeder.all_categories.fetch();
 		
-    Feeder.user_categories = new Feeder.Subsets.UserCategoriesSub([], {
-      parentCollection: Feeder.all_categories
-    });
+    Feeder.user_categories = new Feeder.Collections.Categories();
+		
     Feeder.user_feeds = new Feeder.Subsets.UserFeedsSub([], {
       parentCollection: Feeder.all_feeds
     });
@@ -43,8 +42,8 @@ window.Feeder = {
 	        Feeder.user.setAttrs(Feeder.user_categories,
 	                             Feeder.user_feeds,
 	                             Feeder.user_articles);
-
-          var nav = new Feeder.Views.UserNav({ model: Feeder.user });
+	       
+	        var nav = new Feeder.Views.UserNav({ model: Feeder.user });
 	        $(document).find(".nav-hidden-top").html(nav.render().$el);
 					
 	        Feeder.router = new Feeder.Routers.FeederRouter();
