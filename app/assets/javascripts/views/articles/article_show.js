@@ -28,10 +28,10 @@ Feeder.Views.ArticleShow = Backbone.View.extend({
   displayModal: function(event) {
     event.preventDefault;
     var modal = new Feeder.Views.ArticleModal({ model: this.model, articleView: this });
-		console.log(modal);
     $(document).find("div.article-modal").html(modal.render().$el);
     $(document).find("div.article-modal-content").toggleClass("article-modal-content-on");
     $(document).find("div.article-modal-background").toggleClass("article-modal-background-on");
     $(document).find("div.article-modal").toggleClass("article-modal-on");
+		
   }
 });

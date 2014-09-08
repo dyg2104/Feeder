@@ -5,7 +5,7 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
     "categories/:id" : "categoryPage",
     "feeds/:id" : "feedPage",
 		// "savedArticles" : "showSaved",
-    // "user/categories/:id" : "categoryFilter",
+    "user/categories/:id" : "categoryFilter",
     // "user/feeds/:id" : "feedFilter",
     "searchResults/:query" : "search"
 	},
@@ -41,14 +41,19 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
     this._swapView(feedView);
   },
 	
-	//
-	//   categoryFilter: function(id) {
-	//     var category = Feeder.current_user.categories().get(id);
-	//     var filteredView = new Feeder.Views.CategoryNavFilter({
-	//       model: category
-	//     });
-	//     this._swapView(filteredView);
-	//   },
+
+  categoryFilter: function(id) {
+    Feeder.user.setAttrs(Feeder.user_categories,
+                         Feeder.user_feeds,
+                         Feeder.user_articles);
+												 
+		var userView = new Feeder.Views.UserShow({ model: Feeder.user });
+    var category = Feeder.user_categories.get(id);
+    var filteredView = new Feeder.Views.CategoryNavFilter({
+      model: category
+    });
+    this._swapView(filteredView);
+  },
 	//
 	//   feedFilter: function(id) {
 	//     var that = this;
