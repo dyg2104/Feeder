@@ -1,0 +1,16 @@
+<% if (comments.models.length === 0) { %>
+<div class="article-modal-comment">
+</div>
+
+<% } else {  %>
+
+<% _.each(comments.models, function(comment) { %>
+  <div class="article-modal-comment">
+    <h5><%= comment.get("username") %></h5>
+    <h6><%= comment.get("created_at") %></h6>
+    <br>
+    <p><%= comment.get("body") %></p>
+  </div>
+<% }); %>
+
+<% } %>

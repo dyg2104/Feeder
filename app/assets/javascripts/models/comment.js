@@ -1,1 +1,3 @@
-Feeder.Models.Comment = Backbone.Model.extend({});
+Feeder.Models.Comment = Backbone.Model.extend({
+	urlRoot: '/comments'
+});

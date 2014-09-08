@@ -23,6 +23,10 @@ window.Feeder = {
     Feeder.user_articles = new Feeder.Subsets.ArticlesSub([], {
       parentCollection: Feeder.all_articles
     });
+		
+		Feeder.user_saved_articles = new Feeder.Subsets.ArticlesSub([], {
+			parentCollection: Feeder.all_articles
+		});
 
     Feeder.user = new Feeder.Models.User();
     Feeder.user.fetch({
@@ -39,7 +43,7 @@ window.Feeder = {
 	        Feeder.user.setAttrs(Feeder.user_categories,
 	                             Feeder.user_feeds,
 	                             Feeder.user_articles);
-	        new Feeder.Routers.FeederRouter();
+	        Feeder.router = new Feeder.Routers.FeederRouter();
 	        Backbone.history.start();
 				}
 			}  

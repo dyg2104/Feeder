@@ -6,6 +6,7 @@ Feeder::Application.routes.draw do
   
   resources :user_feeds, only: [:update]
   resources :read_articles, only: [:update]
+  resources :saved_for_laters, only: [:create, :destroy]
   resources :comments, only: [:create]
   
   namespace :api, :defaults => { :format => :json } do
@@ -13,6 +14,7 @@ Feeder::Application.routes.draw do
     resources :categories, :only => [:index, :show]
     resources :feeds, :only => [:show]
     get '/showSaved', to: 'articles#showSaved'
+    resources :comments, :only => [:index]
     get '/search', to: 'searches#show'
   end
   
