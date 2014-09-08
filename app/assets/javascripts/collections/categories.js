@@ -3,6 +3,10 @@ Feeder.Collections.Categories = Backbone.Collection.extend({
 	
 	url: 'api/categories',
 	
+	comparator: function(item){
+		return item.id;
+	},
+	
 	getOrFetch: function(id) {
 		var categories = this;
 		var category;

@@ -54,11 +54,14 @@ Feeder.Views.FeedShow = Backbone.View.extend({
 						Feeder.user_categories.add(category);
 						Feeder.user_feeds.add(that.model);
 						Feeder.user_articles.add(that.model.articles().models);
+						console.log("HUH");
+						
 					} else {
 						//remember to remove them too
-						// console.log(category.feeds().models.indexOf(that.model));
+						console.log(Feeder.user_feeds.where({ id: that.model.id}).length);
 						
-						if (category.feeds().where({ feed_id: that.model.id}).length === 0) {
+						if (Feeder.user_feeds.where({ id: that.model.id}).length === 0) {
+							console.log("WRONG");
 							// category.feeds().add(that.model);
 							Feeder.user_feeds.add(that.model);
 							Feeder.user_articles.add(that.model.articles().models);

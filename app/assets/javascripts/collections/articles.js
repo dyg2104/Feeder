@@ -1,5 +1,9 @@
 Feeder.Collections.Articles = Backbone.Collection.extend({
 	model: Feeder.Models.Article,
+	
+	comparator: function(item) {
+		return -1 * item.get("published_at");
+	},
 
 	getOrFetch: function(id) {
 		var articles = this;

@@ -11,11 +11,13 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
 	},
 
 	homePage: function() {
-    Feeder.user.setAttrs(Feeder.user_categories,
-                         Feeder.user_feeds,
-                         Feeder.user_articles);
-		var userView = new Feeder.Views.UserShow({ model: Feeder.user });
-		this._swapView(userView);
+		if (Feeder.user_status) {
+	    Feeder.user.setAttrs(Feeder.user_categories,
+	                         Feeder.user_feeds,
+	                         Feeder.user_articles);
+			var userView = new Feeder.Views.UserShow({ model: Feeder.user });
+			this._swapView(userView);
+		}
 	},
 	
   categoriesPage: function() {
