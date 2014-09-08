@@ -45,29 +45,33 @@ Feeder.Views.FeedShow = Backbone.View.extend({
       success: function(response) {
 				if (response.success) {
 	        
-					var category = Feeder.user._categories.get(that.model.get("category_id"));
+					var category = Feeder.user_categories.get(that.model.get("category_id"));
 					
 					if (!category) {
 						var category_attributes = Feeder.all_categories.get(that.model.get("category_id")).attributes;
 						category = new Feeder.Models.Category(category_attributes);
-						category.feeds().add(that.model);
-						Feeder.user._categories.add(category);
-						// Feeder.user_feeds.add(that.model);
+						// category.feeds().add(that.model);
+						Feeder.user_categories.add(category);
+						Feeder.user_feeds.add(that.model);
+						Feeder.user_articles.add(that.model.articles().models);
 					} else {
 						//remember to remove them too
-						console.log(category.feeds().models.indexOf(that.model));
-						if (!category.feeds().models.indexOf(that.model)) {
-							category.feeds().add(that.model);
-							// Feeder.user_feeds.add(that.model);
+						// console.log(category.feeds().models.indexOf(that.model));
+						
+						if (category.feeds().where({ feed_id: that.model.id}).length === 0) {
+							// category.feeds().add(that.model);
+							Feeder.user_feeds.add(that.model);
+							Feeder.user_articles.add(that.model.articles().models);
 						} else {
-							category.feeds().remove(that.model);
-							// Feeder.user_feeds.remove(that.model);
+							console.log("HI");
+							var articles_to_remove = Feeder.user_articles.where({ feed_id: that.model.id });
+							Feeder.user_articles.remove(articles_to_remove); 
 							
-							var articles_to_remove = Feeder.user_articles.where({feed_id: that.model.id});
-							Feeder.user_articles.remove(articles_to_remove);
+							// category.feeds().remove(that.model);
+							Feeder.user_feeds.remove(that.model);
 							
-							if (category.feeds().length === 0) {
-								Feeder.user._categories.remove(category);
+							if (Feeder.user_feeds.where({ category_id: that.model.category_id }).length === 0) {
+								Feeder.user_categories.remove(category);
 								// Feeder.user_categories.remove(category);
 							}
 						}
