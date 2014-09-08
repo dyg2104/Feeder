@@ -27,6 +27,8 @@ class ApplicationController < ActionController::Base
     redirect_to new_session_url if current_user.nil?
   end
 
+  public
+
   def unescape_html(str)
     coder = HTMLEntities.new
     coder.decode(str).html_safe
@@ -54,7 +56,7 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  def update_feed(user, feed)
+  def update_feed!(user, feed)
     feed.update_feed
     feed.articles.each do |a|
         ReadArticle.create!({
