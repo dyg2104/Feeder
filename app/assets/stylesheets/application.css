@@ -266,7 +266,7 @@ nav:hover .nav-hidden {
   margin: auto;
   padding: 0 16px 0 16px;
   font-family: sans-serif;
-  border: 2px solid #D3D3D3;
+  border: 2px solid white;
 /*  background: yellow;*/
 }
 
@@ -475,7 +475,7 @@ nav:hover .nav-hidden {
 	display: inline-block;
 	margin: 0 3px 75px 3px;
 	padding: 2px;
-	border: 2px solid #E4E4E4;
+/*  border: 2px solid #E4E4E4;*/
 /*	background: green;*/
 }
 
@@ -493,6 +493,8 @@ nav:hover .nav-hidden {
 .category-show-feed > a > img {
 	display: block;
 	width: 250px;
+  height: 200px;
+  overflow: hidden;
 }
 
 /* Search Results Page */

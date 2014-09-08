@@ -2,18 +2,18 @@ require 'open-uri'
 
 class Feed < ActiveRecord::Base
   include PgSearch
-  
+
   validates :title, :url, :category_id, presence: true
   validates :title, :url, uniqueness: true
-  
+
   default_scope { order(id: :asc) }
-  
+
   belongs_to :category
-  
+
   has_many :articles
   has_many :user_feeds
   has_many :users, through: :user_feeds, source: :user
-  
+
   pg_search_scope :search_by_query,
                   :against => {
                     :title => 'A',
@@ -31,12 +31,15 @@ class Feed < ActiveRecord::Base
                     :tsearch => {:prefix => true}
                   }
 
-  def self.create_feed(title, url, category_id)
+  def self.create_feed(title, url, category_id, image_url)
     p title # Comment for debugging purposes
     p url # Comment for debugging purposes
     begin
       feed_hash = SimpleRSS.parse(open(url))
-      feed = Feed.create!(title: title, url: url, category_id: category_id)
+      feed = Feed.create!(title: title,
+                          url: url,
+                          category_id: category_id,
+                          image_url: image_url)
 
       feed_hash.items.each do |item_hash|
 
@@ -73,9 +76,9 @@ class Feed < ActiveRecord::Base
       feed_hash = SimpleRSS.parse(open(self.url))
 
       existing_art_guids = Article.pluck(:guid).sort
-      
+
       feed_hash.items.each do |item_hash|
-        
+
         begin
           cleaned_guid = Feed.clean_rss(item_hash[:guid])
           cleaned_link = Feed.clean_rss(item_hash[:link])
