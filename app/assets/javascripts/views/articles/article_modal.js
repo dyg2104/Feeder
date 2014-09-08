@@ -68,27 +68,28 @@ Feeder.Views.ArticleModal = Backbone.View.extend({
 
   createComment: function(event) {
     event.preventDefault();
+		
     var params = $(event.currentTarget).serializeJSON();
     var comment = new Feeder.Models.Comment(params["comment"]);
 
     var that = this;
+		
     comment.save({}, {
       success: function() {
         that.subView.collection.add(comment);
-				
 				that.subView.collection.fetch({
 					data: { comment: { article_id: that.model.id } },
 					processData: true
 				});
 				
-				that.$el.find(".modal-comment-form").trigger("reset");
-				
-				
+				that.$el.find(".modal-comment-form").trigger("reset");		
       }
     });
   },
 
   removeModal: function(event) {
+		event.preventDefault();
+		
     $(document).find("div.article-modal-content").toggleClass("article-modal-content-on");
     $(document).find("div.article-modal-background").toggleClass("article-modal-background-on");
     $(document).find("div.article-modal").toggleClass("article-modal-on");
@@ -110,11 +111,15 @@ Feeder.Views.ArticleModal = Backbone.View.extend({
           } else if(hash.substring(0, 12) === "#user/feeds/") {
             that.articleView.remove();
           }
+
+			    that.remove();
         }
       });
+    } else {
+
+	    that.remove();
     }
 
-    this.remove();
   }
 
 });

@@ -6,7 +6,7 @@ Feeder.Views.FeedShow = Backbone.View.extend({
 	className: "feed-show",
 
 	initialize: function() {
-		this.listenTo(this.model, 'add sync remove', this.render);
+		this.listenTo(this.model, 'add sync', this.render);
 		this.subViews = [];
 	},
 
@@ -45,13 +45,15 @@ Feeder.Views.FeedShow = Backbone.View.extend({
       success: function(response) {
 				if (response.success) {
 	        
-					var category = Feeder.user_categories.get(that.model.id);
+					var category = Feeder.user_categories.get(that.model.get("category_id"));
 					
 					if (!category) {
-						category = Feeder.all_categories.get(that.model.id);
+						category = Feeder.all_categories.get(that.model.get("category_id"));
+						//remember to remove them too
 						category.feeds().set(that.model, { remove: false });
 						Feeder.user_categories.add(category);
 						Feeder.user_feeds.add(that.model);
+						console.log(Feeder.user);
 					} else {
 						category.feeds().set(feed, { remove: false });
 						Feeder.user_feeds.add(that.model);

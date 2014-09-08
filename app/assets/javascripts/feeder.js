@@ -43,6 +43,10 @@ window.Feeder = {
 	        Feeder.user.setAttrs(Feeder.user_categories,
 	                             Feeder.user_feeds,
 	                             Feeder.user_articles);
+
+          var nav = new Feeder.Views.UserNav({ model: Feeder.user });
+	        $(document).find(".nav-hidden-top").html(nav.render().$el);
+					
 	        Feeder.router = new Feeder.Routers.FeederRouter();
 	        Backbone.history.start();
 				}

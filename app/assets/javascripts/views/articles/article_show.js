@@ -33,6 +33,5 @@ Feeder.Views.ArticleShow = Backbone.View.extend({
     $(document).find("div.article-modal-content").toggleClass("article-modal-content-on");
     $(document).find("div.article-modal-background").toggleClass("article-modal-background-on");
     $(document).find("div.article-modal").toggleClass("article-modal-on");
-		console.log("HERE");
   }
 });
