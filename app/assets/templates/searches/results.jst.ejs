@@ -16,7 +16,7 @@
 	<br>
 	<br>
 	<br>
-	
+
   <% if (feeds.models.length === 0) { %>
 		<p class="search-results-none">None Found</p>
 
@@ -25,7 +25,7 @@
     <div class="search-results-feed">
       <a href="#feeds/<%= feed.get("id") %>">
         <h4><%= feed.get("title") %></h4>
-        <img src ="http://cdn0.vox-cdn.com/uploads/chorus_image/image/37749232/nytimes-dota-the-international1_2040.0.0_standard_800.0.jpg">
+        <img src ="<%= feed.get("image_url") %>">
       </a>
     </div>
   <% }); %>

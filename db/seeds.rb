@@ -147,10 +147,8 @@ Feed.create_feed("IndieGames", "http://feeds2.feedburner.com/IndependentGaming",
 
 Feed.create_feed("99U", "http://feeds.feedburner.com/The99Percent", 11,
     "http://cdn.99u.com/wp-content/themes/99u/assets/img/logo-og.png")
-Feed.create_feed("Poppytalk", "http://feeds.feedburner.com/blogspot/ISu,Vv", 11,
-    "http://www.lilyandval.com/wp-content/uploads/2013/06/poppy-talk-handmade-logo.png")
 Feed.create_feed("Brain Pickings", "http://feeds.feedburner.com/brainpickings/rss", 11,
-    "http://www.brainpickings.org/wp-content/uploads/2011/05/brainpickings_250x250.png")
+    "http://i.kinja-img.com/gawker-media/image/upload/s--T-uvSuC5--/18dykmzrqewftjpg.jpg")
 Feed.create_feed("It's Nice That", "http://feeds2.feedburner.com/itsnicethat/SlXC", 11,
     "http://www.nellyben.com/wp-content/uploads/2013/01/itsnicethat_logo.jpg")
 Feed.create_feed("CR Blog", "http://www.creativereview.co.uk/cr-blog/feed/", 11,
