@@ -1,8 +1,16 @@
-<a class="article-link" href="localhost:3000/#feeds/<%= article.get("feed_id") %>/articles/<%= article.id %>">
-  <h4><%= article.get("title") %></h4>
-	<h6><%= article.get("feed_title") %> / <%= article.get("published_at") %></h6>
-</a>
-
-<div>
-	<%= unescapeHtml(article.get("description")) %>
+<div class="article-show-image">
+	<img src ="http://cdn0.vox-cdn.com/uploads/chorus_image/image/37749232/nytimes-dota-the-international1_2040.0.0_standard_800.0.jpg">
 </div>
+
+<div class="article-show-container">
+	<a class="article-show-link" href="#">
+	  <h4><%= article.get("title") %></h4>
+		<h6><%= article.get("feed_title") %> / <%= article.get("published_at") %></h6>
+	</a>
+
+	<div class="article-show-description">
+		<%= unescapeHtml(article.get("description")) %>
+	</div>
+</div>
+
+

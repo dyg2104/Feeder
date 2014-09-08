@@ -491,4 +491,181 @@ nav:hover .nav-hidden {
 
 /* Feed Show Page */
 
+.feed-show-content {
+	display: block;
+/*	background: blue;*/
+}
+
+
 /* Article Show Page */
+
+.article-show {
+	display: block;
+	margin-bottom: 50px;
+	width: auto;
+	height: 250px;
+/*	background: green;*/
+}
+
+.article-show-image {
+	float: left;
+/*	padding-top: 15px;*/
+/*	width: 10px;*/
+/*	clear: right;*/
+}
+
+.article-show-image > img {
+	width: 225px;
+	padding-top: 52px;
+}
+
+.article-show-container {
+	float: right;
+	width: 525px;
+/*	background: orange;*/
+	
+}
+
+.article-show-container > a {
+	display: block;
+	margin-bottom: 15px;
+	font-family: sans-serif;
+	text-align: center;
+	text-decoration: none;
+}
+
+.article-show-container > a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+.article-show-container > a > h4 {
+	font-size: 15px;	
+	font-weight: bold;
+	color: black;
+}
+
+.article-show-container > a > h6 {
+	font-size: 14px;
+	color: #E4E4E4;
+}
+
+.article-show-description {
+	width: 100%;
+	height: 160px;
+	overflow: hidden;	
+}
+
+.article-show-description img {
+	display: none;
+}
+
+.article-show-description a {
+	text-decoration: none;
+	color: black;
+}
+
+/* Article Modal */
+
+.article-modal {
+  display: none;
+}
+
+.article-modal-on {
+  display: block;
+}
+
+.article-modal-background-on {
+  position: fixed;
+  display: block;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.article-modal-content {
+  position: fixed;
+  display: none;
+  right: 25px;
+  top: 25px;
+  margin: 0 0 25px 0;
+  width: 60%;
+  height: 92%;
+  background: white;
+	overflow: hidden;
+}
+
+.article-modal-content-on {
+  display: block;
+}
+
+.article-modal-header {
+	display: block;
+	margin: auto;
+	width: 90%;
+	height: 100px;
+	background: red;
+}
+
+#article-modal-close {
+	float: right;
+}
+
+.article-modal-title {
+	display: block;
+	font-family: sans-serif;
+	text-decoration: none;
+	color: black;
+	clear: both;
+}
+
+.article-modal-title:hover {
+	text-decoration: underline;
+}
+
+.article-modal-title > h4 {
+	text-align: center;
+}
+
+.article-modal-title > h6 {
+	text-align: center;
+	font-size: 14px;
+	color: #E4E4E4;
+}
+
+.article-modal-toolbar {
+	display: block;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.article-modal-toolbar > #one {
+	float: left;
+}
+
+.article-modal-toolbar > #two {
+	float: right;
+}
+
+.article-modal-toolbar > #two > div {
+	float: left;
+}
+
+.article-modal-body {
+	display: block;
+	margin: auto;
+	width: 90%;
+	height: 100px;
+	overflow: scroll;
+	clear: both;
+}
+
+.article-modal-comments {
+	
+}
+
+.article-modal-footer {
+	
+}

@@ -1,0 +1,87 @@
+<div class="article-modal-background">
+</div>
+
+<div class="article-modal-content">
+
+  <header class="article-modal-header">
+    <button id="article-modal-close">Close</button>
+		
+    <a class="article-modal-title" href="<%= article.get("guid") %>">
+      <h4><%= article.get("title") %></h4>
+    	<h6><%= article.get("feed_title") %> / <%= article.get("published_at") %></h6>
+    </a>
+
+    <div class="article-modal-toolbar">
+      <button id="one">Save</button>
+
+      <div id="two">
+        <div>
+          <a href="mailto:name@example.com"
+             subject="<%= article.get("title") %>"
+             body="<%= article.get("guid") %>"
+             >
+            Email
+          </a>
+        </div>
+				
+        <div
+          class="fb-share-button"
+          data-href="<%= article.get("guid") %>">
+        </div>
+        
+				<div>
+          <a href="https://twitter.com/share"
+             class="twitter-share-button"
+             data-lang="en"
+             data-text="<%= article.get("title") %>"
+             data-url="<%= article.get("guid") %>">
+             Tweet
+           </a>
+        </div>
+      </div>
+			
+    </div>
+  <header>
+
+  <section class="article-modal-body">
+  	<%= unescapeHtml(article.get("description")) %>
+  </section>
+
+  <section class="article-modal-comments">
+    <br>
+    <h4>Comments<h4>
+    <!-- <br> -->
+
+		<div class="comments-pane">
+		</div>
+
+    <br>
+
+    <% if (Feeder.user_status) { %>
+	  <div class="modal-comment-form-container">
+	    <h4>New Comment</h4>
+
+	    <br>
+	    <form class="modal-comment-form">
+	      <input type="submit">
+	      <input type="hidden"
+	             name="comment[article_id]"
+	             value="<%= this.model.escape("id") %>">
+
+	      <textarea name="comment[body]"></textarea>
+
+
+	    </form>
+	  </div>
+
+    <% } %>
+
+  </section>
+
+  <section class="article-modal-footer">
+    <a href="<%= article.get("guid") %>">
+      Read More
+    </a>
+  </section>
+
+</div>
