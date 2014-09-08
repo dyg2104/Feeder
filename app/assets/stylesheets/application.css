@@ -584,8 +584,10 @@ nav:hover .nav-hidden {
 }
 
 .article-show-image > img {
-	width: 225px;
 	padding-top: 52px;
+  width: 225px;
+  height: 150px;
+  overflow: hidden;
 }
 
 .article-show-container {
