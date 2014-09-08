@@ -38,7 +38,7 @@ nav {
 
 nav:hover .nav-hidden {
   display: block;
-	overflow: scroll;
+/*  overflow: scroll;*/
 }
 
 .nav-hidden-top {

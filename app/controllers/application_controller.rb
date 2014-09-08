@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  
+
   helper_method :current_user
   helper_method :unescape_html
 
@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
   def require_signed_in
     redirect_to new_session_url if current_user.nil?
   end
-  
+
   def unescape_html(str)
     coder = HTMLEntities.new
     coder.decode(str).html_safe
@@ -51,6 +51,16 @@ class ApplicationController < ActionController::Base
           })
         end
       end
+    end
+  end
+
+  def update_feed(user, feed)
+    feed.update_feed
+    feed.articles.each do |a|
+        ReadArticle.create!({
+          user_id: user.id,
+          article_id: a.id
+        })
     end
   end
 
