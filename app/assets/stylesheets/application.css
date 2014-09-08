@@ -25,7 +25,7 @@ nav {
   position:fixed;
   width: 52px;
   height: 100%;
-  background: #EAEAEA;
+  background: #DCDCDC;
 }
 
 .nav-hidden {
@@ -170,7 +170,7 @@ nav:hover .nav-hidden {
   height: 100%;
   padding-left: 190px;
   padding-right: 132px;
-/*  background: red;*/
+/*  background: #DCDCDC;*/
 }
 
 /* Pages Header */
@@ -266,7 +266,7 @@ nav:hover .nav-hidden {
   margin: auto;
   padding: 0 16px 0 16px;
   font-family: sans-serif;
-  border: 2px dashed white;
+  border: 2px solid #D3D3D3;
 /*  background: yellow;*/
 }
 
@@ -462,7 +462,7 @@ nav:hover .nav-hidden {
 
 .category-show-content {
 	display: block;
-	font-family: sans-serif;	
+	font-family: sans-serif;
 	clear: both;
 /*	background: orange;*/
 }
@@ -499,7 +499,7 @@ nav:hover .nav-hidden {
 
 .search-results-content {
 	display: block;
-	font-family: sans-serif;	
+	font-family: sans-serif;
 	clear: both;
 /*	background: orange;*/
 }
@@ -585,7 +585,7 @@ nav:hover .nav-hidden {
 	float: right;
 	width: 525px;
 /*	background: orange;*/
-	
+
 }
 
 .article-show-container > a {
@@ -603,7 +603,7 @@ nav:hover .nav-hidden {
 }
 
 .article-show-container > a > h4 {
-	font-size: 15px;	
+	font-size: 15px;
 	font-weight: bold;
 	color: black;
 }
@@ -617,7 +617,7 @@ nav:hover .nav-hidden {
 .article-show-description {
 	width: 100%;
 	height: 160px;
-	overflow: hidden;	
+	overflow: hidden;
 }
 
 .article-show-description img {
@@ -731,6 +731,7 @@ nav:hover .nav-hidden {
 
 .article-modal-toolbar > #one:hover {
 	cursor: pointer;
+  text-decoration: underline;
 }
 
 .article-modal-toolbar > #two {
@@ -742,14 +743,14 @@ nav:hover .nav-hidden {
 	margin-left: 15px;
 }
 
-.article-modal-toolbar > #two > div:nth-child(1) > a{
+.article-modal-toolbar > #two > div > a{
 	display: block;
 	padding-top: 3px;
 	text-decoration: none;
 	color: black;
 }
 
-.article-modal-toolbar > #two > div:nth-child(1) > a:hover{
+.article-modal-toolbar > #two > div > a:hover{
 	text-decoration: underline;
 }
 
@@ -787,7 +788,7 @@ nav:hover .nav-hidden {
 	width: 100%;
 	height: 50px;
 	border: 2px solid #E4E4E4;
-	border-radius: 5px;	
+	border-radius: 5px;
 }
 
 .modal-comment-form > textarea {
@@ -799,8 +800,8 @@ nav:hover .nav-hidden {
 .modal-comment-form > input[type="submit"] {
 	position: absolute;
 /*	padding: 5px;*/
-	top: 74%;
-	right: 6%;
+	bottom: 190px;
+	right: 50px;
 	background: white;
 	color: black;
 	border-radius: 5px;
@@ -808,6 +809,7 @@ nav:hover .nav-hidden {
 
 .modal-comment-form > input[type="submit"]:hover {
 	cursor: pointer;
+  text-decoration: underline;
 }
 
 

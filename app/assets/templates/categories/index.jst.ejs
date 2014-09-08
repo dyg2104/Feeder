@@ -10,7 +10,7 @@
 <% _.each(categories, function(category) { %>
   <div class="category-index-category">
 		<a href="#categories/<%= category.get("id") %>">
-		<img src="https://s3.feedly.com/explore/tech.jpg">
+		<img src="<%= category.get("image_url") %>">
     <h4><%= category.get("title") %></h4>
     </a>
   </div>

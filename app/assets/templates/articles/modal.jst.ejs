@@ -7,7 +7,7 @@
 	  <div id="article-modal-close">
       <button>Close</button>
 		</div>
-		
+
     <a class="article-modal-title" href="<%= article.get("guid") %>">
       <h4><%= article.get("title") %></h4>
     	<h6><%= article.get("feed_title") %> / <%= article.get("published_at") %></h6>
@@ -26,23 +26,20 @@
             Email
           </a>
         </div>
-				
-        <div
-          class="fb-share-button"
-          data-href="<%= article.get("guid") %>">
+
+        <div>
+          <a href="<%= fb_link %>">
+            Share
+          </a>
         </div>
-        
+
 				<div>
-          <a href="https://twitter.com/share"
-             class="twitter-share-button"
-             data-lang="en"
-             data-text="<%= article.get("title") %>"
-             data-url="<%= article.get("guid") %>">
+          <a href="<%= twitter_link %>">
              Tweet
            </a>
         </div>
       </div>
-			
+
     </div>
 	</header>
 
