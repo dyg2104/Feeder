@@ -59,7 +59,6 @@ Feeder.Routers.FeederRouter = Backbone.Router.extend({
 		Feeder.user.setAttrs(Feeder.user_categories,
                          Feeder.user_feeds,
                          Feeder.user_articles);
-												 console.log(id);
 		
 		feed = Feeder.user_feeds.get(id);
     var filteredView = new Feeder.Views.FeedNavFilter({

@@ -19,6 +19,5 @@ Feeder.Views.CategoryUserShow = Backbone.View.extend({
 		});
 
 		return this;
-	},
-	
+	}
 });

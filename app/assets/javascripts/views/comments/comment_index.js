@@ -13,5 +13,4 @@ Feeder.Views.CommentIndex = Backbone.View.extend({
 		this.$el.html(content);
 		return this;
 	}
-	
 });

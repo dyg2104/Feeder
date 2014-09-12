@@ -1,28 +1,17 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A clone of the popular news reading app Feedly with the following functionality:
 
-Things you may want to cover:
+Rails:
+- opens rss feeds, parses the resulting data into articles, and saves said articles in the database
+- saves user profiles and verifies their accounts upon log in using BCrypt
+- handles api requests
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Backbone:
+- handles all interaction on the application after a root page is rendered
+- allows users to search for feeds and news articles by making AJAX requests and rendering new views with the results
+- allows loggedin users to save feeds to their accounts
+- dynamically alters loggedin users navbar based on their feeds
+- ensures only one Backbone model of every Rails model exists, significanly improving performance
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.

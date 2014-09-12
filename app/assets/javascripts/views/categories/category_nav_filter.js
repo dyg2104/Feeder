@@ -31,5 +31,4 @@ Feeder.Views.CategoryNavFilter = Backbone.View.extend({
     searchLink = "searchResults/" + params.query
     Feeder.router.navigate(searchLink, {trigger: true});
   }
-
 });

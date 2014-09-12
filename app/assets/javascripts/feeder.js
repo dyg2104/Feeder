@@ -5,8 +5,6 @@ window.Feeder = {
   Views: {},
   Routers: {},
   initialize: function() {
-    // alert('Hello from Backbone!');
-    // Feeder.all_users = new Feeder.Collections.Users();
     Feeder.all_categories = new Feeder.Collections.Categories();
     Feeder.all_feeds = new Feeder.Collections.Feeds();
     Feeder.all_articles = new Feeder.Collections.Articles();

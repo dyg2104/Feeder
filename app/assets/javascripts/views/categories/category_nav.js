@@ -27,5 +27,4 @@ Feeder.Views.CategoryNav = Backbone.View.extend({
 		
     return this;
 	}
-
 });

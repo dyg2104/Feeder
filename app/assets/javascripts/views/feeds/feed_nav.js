@@ -17,5 +17,4 @@ Feeder.Views.FeedNav = Backbone.View.extend({
     this.$el.attr("href", link);
     return this;
 	}
-
 });
