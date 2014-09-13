@@ -22,7 +22,7 @@ Feed.create_feed("Engadget", "http://podcasts.engadget.com/rss.xml", 1,
 Feed.create_feed("LifeHacker", "http://feeds.gawker.com/lifehacker/full.xml", 1,
     "http://www.userlogos.org/files/logos/gumanov/LifeHacker.png")
 Feed.create_feed("TechCrunch", "http://feeds.feedburner.com/TechCrunch/", 1,
-    "https://pbs.twimg.com/profile_images/469171480832380928/rkZR1jIh_400x400.png")
+    "http://tctechcrunch2011.files.wordpress.com/2014/04/tc-logo.jpg")
 Feed.create_feed("ReadWrite", "http://www.specificfeeds.com/readwrite-s-specific-feed", 1,
     "http://www.mercury-inc.com/assets/images/blog/rw-rebrand_1x.png")
 Feed.create_feed("Yahoo Tech", "http://news.yahoo.com/rss/tech", 1,
