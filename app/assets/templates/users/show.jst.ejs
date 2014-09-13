@@ -11,5 +11,14 @@
 	</div>
 </header>
 
+<% if (user._categories.models.length === 0) { %>
+	<div class="loggedin-instructions">
+		<p>Hover over the bar to the left,</p>
+		<p>click on add content,</p>
+		<p>find a feed you like,</p>
+		<p>and follow it to add articles here!</p> 
+	</div> 
+<% } %>
+
 <div class="article-modal">
 </div>
